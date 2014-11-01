@@ -3,10 +3,16 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+    @average_price = Product.average(:price)
+    @maximum_price = Product.maximum(:price)
+    @number_of_products = Product.count(:id)
+    @total_stock = Product.sum(:stock_quantity)
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
+
+
     end
   end
 

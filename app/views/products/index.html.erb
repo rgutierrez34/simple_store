@@ -29,10 +29,10 @@
 <%= link_to 'New Product', new_product_path %>
 
 <ul>
-  <li>Average Price: <%= number_to_currency(Product.average(:price)) %></li>
-  <li>Maximum Price: <%= number_to_currency(Product.maximum(:price)) %></li>
-  <li>Total Number of Products: <%= Product.count(:id) %></li>
-  <li>Total Stock of All Items: <%= Product.sum(:stock_quantity) %></li>
+  <li>Average Price: <%= number_to_currency(@average_price) %></li>
+  <li>Maximum Price: <%= number_to_currency(@maximum_price) %></li>
+  <li>Total Number of Products: <%= @number_of_products %></li>
+  <li>Total Stock of All Items: <%= @total_stock %></li>
 </ul>
 
 <%= 100.times do %>
